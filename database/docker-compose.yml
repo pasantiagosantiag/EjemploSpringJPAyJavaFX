@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_container
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      #fuente bd https://github.com/pabloabap/Base-de-datos-SQL_Universidad
+      MYSQL_DATABASE: sakila
+      MYSQL_USER: iessequeros
+      MYSQL_PASSWORD: iessequeros
+    volumes:
+      - ./db:/var/lib/mysql  # Monta el directorio local ./mysql-data
